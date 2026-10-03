@@ -54,6 +54,10 @@ python -m http.server 8000
 - [idyll-lang/idyll](https://github.com/idyll-lang/idyll) — 交互式文章
 - Distill 风格科普排版、IntersectionObserver 滚动渐入
 
+**视觉参考：**
+- ZARA 官网（zara.com）编辑式设计语言：黑白二元配色、超大 Didone/Didot 高对比衬线标题（Playfair Display 免费替代）、零圆角、全出血大片、极简细字导航
+- 开场为 CSS 幕布拉开动画（红丝绒褶皱渐变 + 双幕位移），支持 REPLAY 重播
+
 **B 站官摄链接（点击剧目卡片即可跳转）：**
 - 歌剧魅影 25 周年纪念演出
 - 悲惨世界 10 周年纪念音乐会
