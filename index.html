@@ -27,10 +27,36 @@
   <button class="nav-toggle" id="navToggle" aria-label="菜单">MENU</button>
 </nav>
 
-<!-- 0. 开场：幕布拉开 -->
+<!-- 0. 开场：吊灯坠落 + 幕布拉开 -->
 <header class="hero" id="hero">
   <div class="hero-stage" style="background-image:url('assets/images/hero.jpg')"></div>
   <div class="hero-spot" id="heroSpot"></div>
+
+  <!-- 魅影吊灯 -->
+  <div class="chandelier" id="chandelier" aria-hidden="true">
+    <svg viewBox="0 0 200 230">
+      <line x1="100" y1="0" x2="100" y2="38" stroke="#c9a84c" stroke-width="2"/>
+      <path d="M72 38 L128 38 L120 54 L80 54 Z" fill="#c9a84c"/>
+      <ellipse cx="100" cy="92" rx="72" ry="18" fill="none" stroke="#c9a84c" stroke-width="4"/>
+      <ellipse cx="100" cy="92" rx="56" ry="12" fill="none" stroke="#8b6914" stroke-width="2"/>
+      <g fill="#fff3c4">
+        <circle cx="44" cy="80" r="4"/><circle cx="74" cy="74" r="4"/>
+        <circle cx="100" cy="72" r="4"/><circle cx="126" cy="74" r="4"/>
+        <circle cx="156" cy="80" r="4"/>
+      </g>
+      <g fill="#ffb347">
+        <ellipse cx="44" cy="72" rx="2" ry="5"/><ellipse cx="74" cy="66" rx="2" ry="5"/>
+        <ellipse cx="100" cy="64" rx="2" ry="5"/><ellipse cx="126" cy="66" rx="2" ry="5"/>
+        <ellipse cx="156" cy="72" rx="2" ry="5"/>
+      </g>
+      <g fill="#e8d8ff" opacity=".85">
+        <polygon points="58,102 64,134 52,134"/>
+        <polygon points="100,104 106,146 94,146"/>
+        <polygon points="142,102 148,134 136,134"/>
+      </g>
+    </svg>
+  </div>
+
   <div class="hero-content" id="heroContent">
     <p class="kicker">A BEGINNER'S GUIDE TO MUSICAL THEATRE</p>
     <h1 class="hero-title">
@@ -40,6 +66,13 @@
     <p class="hero-sub">灯光暗下，大幕拉开的 2.5 小时，你会经历什么？</p>
     <a href="#what" class="btn-line">ENTER — 进入剧场</a>
   </div>
+
+  <!-- 点击开启 -->
+  <button class="begin-btn" id="beginBtn">
+    <span class="begin-ring"></span>
+    <span class="begin-text">点击开启<br><small>CLICK TO BEGIN</small></span>
+  </button>
+
   <!-- 幕布 -->
   <div class="curtain curtain-left" id="curtainL"><div class="curtain-fold"></div></div>
   <div class="curtain curtain-right" id="curtainR"><div class="curtain-fold"></div></div>
