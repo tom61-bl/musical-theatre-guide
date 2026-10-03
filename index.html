@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音乐剧观赏指南 · 从大幕拉开到走进剧场</title>
+<meta name="description" content="一份写给零基础观众的外国音乐剧入门指南：什么是音乐剧、四大版图、观剧黑话、第一次看剧攻略，以及五部名剧赏析。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 阅读进度条 -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- 顶部导航 -->
+<nav class="topnav" id="topnav">
+  <a class="logo" href="#hero">音乐剧观赏指南</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#what">是什么</a>
+    <a href="#how">怎么演</a>
+    <a href="#map">版图</a>
+    <a href="#words">黑话</a>
+    <a href="#first">第一次</a>
+    <a href="#shows">名剧</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+</nav>
+
+<!-- 0. 首屏 -->
+<header class="hero" id="hero">
+  <div class="hero-img" style="background-image:url('assets/images/hero.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">A BEGINNER'S GUIDE TO MUSICAL THEATRE</p>
+    <h1>音乐剧观赏指南</h1>
+    <p class="hero-sub">灯光暗下，大幕拉开的 2.5 小时，<br>你会经历什么？</p>
+    <a href="#what" class="btn-gold">拉开大幕 ↓</a>
+  </div>
+  <div class="curtain-fade"></div>
+</header>
+
+<main>
+
+<!-- 1. 什么是音乐剧 -->
+<section class="section" id="what">
+  <div class="wrap">
+    <p class="sec-num">01</p>
+    <h2>什么是音乐剧？</h2>
+    <p class="lead">音乐剧（Musical）是用<strong>歌唱、对白、表演和舞蹈</strong>一起讲故事的舞台戏剧。台词说不够了就唱，动作走不够了就舞——所有手段都为了把人物的情感推到最满。</p>
+
+    <p>它诞生于 20 世纪初，如今是纽约百老汇和伦敦西区的招牌。和电影不同，音乐剧<strong>没有 NG、没有后期</strong>，每一场都是演员与观众共同完成的现场。</p>
+
+    <h3 class="sub-title">它和歌剧有什么不一样？</h3>
+    <p class="muted">点一点卡片，翻到背面看答案。</p>
+    <div class="flip-grid">
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-face front"><span class="flip-icon">🎭</span><h4>音乐剧</h4><p>Musical</p></div>
+          <div class="flip-face back">
+            <p>唱法自由：美声、流行、摇滚都行；有对白、有舞蹈；用麦克风扩音；题材通俗，20 世纪兴起。</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-face front"><span class="flip-icon">🎼</span><h4>歌剧</h4><p>Opera</p></div>
+          <div class="flip-face back">
+            <p>以古典美声从头唱到尾，基本没有舞蹈和口语对白；不用麦克风，靠人声穿透乐队；历史超过 400 年。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare">
+      <div class="compare-row"><span class="tag">vs 话剧</span><p>话剧主要靠说，音乐剧在情绪最强烈的地方会"唱起来"。</p></div>
+      <div class="compare-row"><span class="tag">vs 演唱会</span><p>演唱会以歌曲本身为中心，音乐剧的每首歌都在推进剧情、塑造人物。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 怎么演出来 -->
+<section class="section section-alt" id="how">
+  <div class="wrap">
+    <p class="sec-num">02</p>
+    <h2>一部音乐剧是怎么演出来的？</h2>
+    <p class="lead">三大支柱撑起一台戏：<strong>歌、舞、剧</strong>。乐池里的乐队现场演奏，指挥同时盯着舞台和乐谱，是全场的"心跳"。</p>
+
+    <figure class="wide-img">
+      <img src="assets/images/stage.jpg" alt="音乐剧舞台" loading="lazy">
+      <figcaption>舞台上的一切，都在为"此刻"的情感服务</figcaption>
+    </figure>
+
+    <h3 class="sub-title">一首歌的旅程</h3>
+    <p class="muted">点击下面的节点，看看音乐剧中常见的歌曲类型。</p>
+    <div class="timeline" id="timeline">
+      <button class="tl-item active" data-tl="0"><span>序曲</span><small>Overture</small></button>
+      <button class="tl-item" data-tl="1"><span>独唱</span><small>Solo</small></button>
+      <button class="tl-item" data-tl="2"><span>重唱</span><small>Duet / Ensemble</small></button>
+      <button class="tl-item" data-tl="3"><span>合唱</span><small>Chorus</small></button>
+      <button class="tl-item" data-tl="4"><span>终曲</span><small>Finale</small></button>
+    </div>
+    <div class="tl-panel" id="tlPanel">
+      <h4>序曲 Overture</h4>
+      <p>大幕拉开前，乐队先奏响全剧的主要旋律。几秒钟内，你就已经"走进"了这个故事的世界。</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><h4>歌</h4><p>独唱吐露心声，重唱让几个人物的观点同时碰撞，合唱代表群体的声音。</p></div>
+      <div class="pillar"><h4>舞</h4><p>舞蹈不只是好看，它用身体表达语言到不了的情绪，也交代时代与场面。</p></div>
+      <div class="pillar"><h4>剧</h4><p>剧本（Book）决定人物和故事，所有歌舞都长在剧情之上，而不是硬插的 MV。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 世界版图 -->
+<section class="section" id="map">
+  <div class="wrap">
+    <p class="sec-num">03</p>
+    <h2>世界音乐剧版图</h2>
+    <p class="lead">四大产地，四种气质。切换标签，看看你会被哪一种击中。</p>
+
+    <div class="tabs" id="regionTabs">
+      <button class="tab active" data-region="0">🇺🇸 纽约百老汇</button>
+      <button class="tab" data-region="1">🇬🇧 伦敦西区</button>
+      <button class="tab" data-region="2">🇫🇷 法语音乐剧</button>
+      <button class="tab" data-region="3">🇩🇪 德奥音乐剧</button>
+    </div>
+    <div class="tab-panel" id="regionPanel">
+      <h4>纽约百老汇 Broadway</h4>
+      <p>音乐剧产业的心脏，讲究戏剧结构完整、歌舞与叙事严丝合缝。商业、华丽、造梦机器。</p>
+      <p class="works">代表作：《歌剧魅影》《汉密尔顿》《猫》《芝加哥》《魔法坏女巫》</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 观剧小词典 -->
+<section class="section section-alt" id="words">
+  <div class="wrap">
+    <p class="sec-num">04</p>
+    <h2>观剧小词典</h2>
+    <p class="lead">进剧场前先认识这些"黑话"，看戏时你会会心一笑。</p>
+    <p class="muted">点击卡片翻面。</p>
+    <div class="word-grid" id="wordGrid"></div>
+  </div>
+</section>
+
+<!-- 5. 第一次看剧 -->
+<section class="section" id="first">
+  <div class="wrap">
+    <p class="sec-num">05</p>
+    <h2>第一次看剧，怎么准备？</h2>
+    <p class="lead">第一次不用做功课，跟着感觉走就好。下面几件小事，能让你的体验好一倍。</p>
+
+    <div class="tips">
+      <div class="tip"><h4>① 选剧</h4><p>从大名鼎鼎的入门名剧开始，或挑你已经熟悉的故事改编——更容易入戏。</p></div>
+      <div class="tip"><h4>② 座位</h4><p>新手推荐中轴、一楼或二楼前排。看得清表情、听得清歌词，比"便宜但挂壁"重要。</p></div>
+      <div class="tip"><h4>③ 穿着</h4><p>没有着装要求，干净得体即可。重点是舒服，因为要坐 2.5 小时。</p></div>
+    </div>
+
+    <h3 class="sub-title">观剧礼仪小测验</h3>
+    <div id="quiz" class="quiz"></div>
+
+    <h3 class="sub-title">你的第一部音乐剧</h3>
+    <p class="muted">回答 3 个问题，看看哪部剧适合作为你的"入坑之作"。</p>
+    <div id="starter" class="starter"></div>
+  </div>
+</section>
+
+<!-- 6. 名剧赏析 -->
+<section class="section section-dark" id="shows">
+  <div class="wrap">
+    <p class="sec-num">06</p>
+    <h2>五部名剧，带你入门</h2>
+    <p class="lead">这五部都是外国音乐剧中最具代表性的作品。点开卡片看赏析，再顺着 B 站链接看一场完整官摄。</p>
+
+    <div class="show-list">
+
+      <article class="show-card">
+        <div class="show-img"><img src="assets/images/phantom.jpg" alt="歌剧魅影" loading="lazy"></div>
+        <div class="show-body">
+          <div class="show-tags"><span class="badge">英国 · 1986</span><span class="badge badge-ghost">西区/百老汇</span></div>
+          <h3>《歌剧魅影》<small>The Phantom of the Opera</small></h3>
+          <p class="show-plot">巴黎歌剧院地下，住着一位戴面具的音乐天才。他爱上了年轻女演员克里斯汀，爱与占有把他推向深渊。</p>
+          <p><strong>必听：</strong>The Phantom of the Opera · The Music of the Night · All I Ask of You</p>
+          <p><strong>看点：</strong>韦伯写出了一生的旋律；吊灯从观众头顶轰然坠落、地下湖泛舟、管风琴声响彻剧场——它是"舞美之王"，哥特浪漫的极致。</p>
+          <p><strong>为什么必须现场：</strong>那盏吊灯，是朝你砸下来的。</p>
+          <a class="btn-bili" href="https://www.bilibili.com/video/BV1ao4y1Z7tn" target="_blank" rel="noopener">▶ B 站看 25 周年纪念官摄</a>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-img"><img src="assets/images/lesmis.jpg" alt="悲惨世界" loading="lazy"></div>
+        <div class="show-body">
+          <div class="show-tags"><span class="badge">法国 · 1980 / 1985</span><span class="badge badge-ghost">史诗</span></div>
+          <h3>《悲惨世界》<small>Les Misérables</small></h3>
+          <p class="show-plot">逃犯冉·阿让用一生完成救赎，而警官沙威穷追不舍。19 世纪的法国街头，革命、苦难与爱交织成史诗。</p>
+          <p><strong>必听：</strong>I Dreamed a Dream · Stars · Do You Hear the People Sing · One Day More</p>
+          <p><strong>看点：</strong>"苦难"与"梦想"两条旋律贯穿全剧，连反派沙威都被赋予理想主义色彩。十周年纪念音乐会的"梦幻卡司"被誉为传奇。</p>
+          <p><strong>为什么必须现场：</strong>当《Do You Hear the People Sing》响起，你会和全场一起屏住呼吸。</p>
+          <a class="btn-bili" href="https://www.bilibili.com/video/BV1xX4y1F7p6" target="_blank" rel="noopener">▶ B 站看 10 周年纪念音乐会</a>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-img"><img src="assets/images/nddp.jpg" alt="巴黎圣母院" loading="lazy"></div>
+        <div class="show-body">
+          <div class="show-tags"><span class="badge">法国 · 1998</span><span class="badge badge-ghost">法语音乐剧</span></div>
+          <h3>《巴黎圣母院》<small>Notre-Dame de Paris</small></h3>
+          <p class="show-plot">1482 年的巴黎，驼背敲钟人卡西莫多、副主教弗罗洛与吉卜赛少女爱斯梅拉达，被命运与爱情困在石砌的大教堂里。</p>
+          <p><strong>必听：</strong>Le temps des cathédrales（大教堂时代）· Belle（美人）· Vivre</p>
+          <p><strong>看点：</strong>55 首歌曲<strong>一唱到底、没有一句对白</strong>，流行、摇滚与古典熔于一炉。它在 1998 年复兴了法语音乐剧，首演门票一个月售出 200 万张。</p>
+          <p><strong>为什么必须现场：</strong>《Belle》中三个男人同时唱出对同一个女人的爱，现场的震撼无法复制。</p>
+          <a class="btn-bili" href="https://www.bilibili.com/video/BV1Jq4y167t1" target="_blank" rel="noopener">▶ B 站看 1998 原卡官摄</a>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-img"><img src="assets/images/mozart-rock.jpg" alt="摇滚莫扎特" loading="lazy"></div>
+        <div class="show-body">
+          <div class="show-tags"><span class="badge">法国 · 2009</span><span class="badge badge-ghost">法扎</span></div>
+          <h3>《摇滚莫扎特》<small>Mozart, l'opéra rock</small></h3>
+          <p class="show-plot">莫扎特离开萨尔茨堡，在欧洲的偏见与宫廷规则中横冲直撞，用天才和摇滚对抗整个世界。</p>
+          <p><strong>必听：</strong>L'Assasymphonie（杀戮交响曲）· Tatoue-moi（纹我）· Je dors sur des roses</p>
+          <p><strong>看点：</strong>摇滚乐混搭巴洛克华服，舞台绚烂、能量爆棚。它聚焦的是莫扎特<strong>对外部世界的抗争</strong>，中国观众昵称"法扎"。</p>
+          <p><strong>为什么必须现场：</strong>电吉他与古典裙撑同时炸开，是"燃"字的最好解释。</p>
+          <a class="btn-bili" href="https://www.bilibili.com/video/av3058236" target="_blank" rel="noopener">▶ B 站看法扎官摄</a>
+        </div>
+      </article>
+
+      <article class="show-card">
+        <div class="show-img"><img src="assets/images/mozart-de.jpg" alt="莫扎特！" loading="lazy"></div>
+        <div class="show-body">
+          <div class="show-tags"><span class="badge">奥地利 · 1999</span><span class="badge badge-ghost">德扎</span></div>
+          <h3>《莫扎特！》<small>Mozart! Das Musical</small></h3>
+          <p class="show-plot">同一个莫扎特，却把镜头对准了他的内心：神童的光环如何压垮一个凡人，天才的灵魂如何在躯壳里痛苦挣扎。</p>
+          <p><strong>必听：</strong>Gold von den Sternen（星星上的金子）· Ich bin Musik（我就是音乐）· Warum kannst du mich nicht lieben</p>
+          <p><strong>看点：</strong>由 Michael Kunze 作词、Sylvester Levay 作曲，气质<strong>内省、深沉</strong>，是德奥音乐剧的招牌。中国观众昵称"德扎"。</p>
+          <p><strong>为什么必须现场：</strong>《星星上的金子》一响，许多人说它是"精神氮泵"。</p>
+          <a class="btn-bili" href="https://www.bilibili.com/video/BV1YW411V7f5" target="_blank" rel="noopener">▶ B 站看德扎官摄</a>
+        </div>
+      </article>
+
+      <!-- 法扎 vs 德扎 -->
+      <div class="vs-box">
+        <h3>同一个莫扎特，两部什么剧？</h3>
+        <div class="vs-cols">
+          <div><h4>法扎（摇滚莫扎特）</h4><p>向外——对抗世界</p><p>摇滚、华丽、燃</p></div>
+          <div class="vs-mid">VS</div>
+          <div><h4>德扎（莫扎特！）</h4><p>向内——剖开灵魂</p><p>内省、深沉、痛</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7. 结尾 CTA -->
+<section class="section section-end" id="end">
+  <div class="wrap">
+    <p class="sec-num">07</p>
+    <h2>现在，轮到你了</h2>
+    <p class="lead">入坑其实只要三步。清单会自动保存在你的浏览器里。</p>
+    <ul class="checklist" id="checklist">
+      <li><label><input type="checkbox"> 听一张上面任意一部剧的原声专辑</label></li>
+      <li><label><input type="checkbox"> 在 B 站看完一场完整官摄</label></li>
+      <li><label><input type="checkbox"> 关注一部喜欢的剧，等它来你的城市巡演</label></li>
+      <li><label><input type="checkbox"> 买一张票，走进剧场</label></li>
+    </ul>
+    <p class="final-line">大幕拉开的那一刻，你会明白：<br>所有的等待，都值得。</p>
+    <a class="btn-gold" href="#hero">↑ 回到开场</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>《音乐剧观赏指南》· 一份写给零基础观众的科普小站</p>
+  <p class="muted">图片与官摄链接版权归原作者所有，本站仅作科普介绍。</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
