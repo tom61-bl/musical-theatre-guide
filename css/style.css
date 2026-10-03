@@ -71,17 +71,25 @@ strong{font-weight:600}
   50%{transform:translateX(-50%) rotate(2.5deg)}
 }
 
-/* ===== 点击开启按钮 ===== */
-.begin-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9;
-  background:none;border:none;cursor:pointer;color:var(--gold);text-align:center;
-  transition:opacity .5s}
-.hero.begin .begin-btn{opacity:0;pointer-events:none}
-.begin-ring{display:block;width:120px;height:120px;margin:0 auto 18px;border-radius:50%;
+/* ===== 点击开启（全屏遮罩） ===== */
+.begin-overlay{position:absolute;inset:0;z-index:9;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.15),rgba(0,0,0,.55));
+  transition:opacity .6s ease;}
+.hero.begin .begin-overlay{opacity:0;pointer-events:none}
+.begin-center{text-align:center;color:var(--gold)}
+.begin-ring{display:block;width:130px;height:130px;margin:0 auto 28px;border-radius:50%;
   border:1px solid var(--gold);position:relative;animation:pulse 2s ease-in-out infinite}
-.begin-ring::after{content:"";position:absolute;inset:14px;border-radius:50%;border:1px solid rgba(201,168,76,.5)}
+.begin-ring::after{content:"";position:absolute;inset:16px;border-radius:50%;border:1px solid rgba(201,168,76,.45)}
+.begin-ring::before{content:"";position:absolute;inset:50%;width:8px;height:8px;margin:-4px 0 0 -4px;
+  background:var(--gold);border-radius:50%;box-shadow:0 0 20px var(--gold)}
+.begin-title{font-family:var(--serif);font-size:38px;letter-spacing:8px;margin-bottom:10px;
+  text-shadow:0 2px 30px rgba(0,0,0,.8)}
+.begin-en{font-size:10px;letter-spacing:5px;color:rgba(201,168,76,.7);margin-bottom:22px}
+.begin-hint{font-size:11px;letter-spacing:2px;color:rgba(247,244,238,.6);
+  animation:blink 1.8s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
-.begin-text{font-family:var(--serif);font-size:20px;letter-spacing:2px;line-height:1.5}
-.begin-text small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:4px;color:var(--grey);margin-top:4px}
+@keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
 
 /* 幕布本体 — 收拢式拉开 */
 .curtain{position:absolute;top:0;bottom:0;width:51%;z-index:5;overflow:hidden;

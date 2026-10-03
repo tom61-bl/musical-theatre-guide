@@ -67,11 +67,15 @@
     <a href="#what" class="btn-line">ENTER — 进入剧场</a>
   </div>
 
-  <!-- 点击开启 -->
-  <button class="begin-btn" id="beginBtn">
-    <span class="begin-ring"></span>
-    <span class="begin-text">点击开启<br><small>CLICK TO BEGIN</small></span>
-  </button>
+  <!-- 点击开启（全屏可点） -->
+  <div class="begin-overlay" id="beginOverlay">
+    <div class="begin-center">
+      <div class="begin-ring"></div>
+      <p class="begin-title">点击开启</p>
+      <p class="begin-en">CLICK ANYWHERE TO BEGIN</p>
+      <p class="begin-hint">↳ 吊灯坠落 · 管风琴响起 · 大幕拉开</p>
+    </div>
+  </div>
 
   <!-- 幕布 -->
   <div class="curtain curtain-left" id="curtainL"><div class="curtain-fold"></div></div>

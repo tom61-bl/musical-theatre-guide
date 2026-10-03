@@ -15,7 +15,7 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => na
 
 /* ===== 开场：吊灯坠落 + 管风琴 + 幕布收拢拉开 ===== */
 const hero = document.getElementById('hero');
-const beginBtn = document.getElementById('beginBtn');
+const beginOverlay = document.getElementById('beginOverlay');
 
 let audioCtx = null;
 /* Web Audio 合成《歌剧魅影》标志性管风琴前奏（D 小调下行动机） */
@@ -23,27 +23,23 @@ function playPhantomOrgan(){
   try{
     if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     if(audioCtx.state === 'suspended') audioCtx.resume();
-    // D 小调魅影动机：D5 A4 F4 D4 | A4 F4 D4 A3，重复两轮
     const seq = [587.33,440.00,349.23,293.66, 440.00,349.23,293.66,220.00,
                  587.33,440.00,349.23,293.66, 440.00,349.23,293.66,220.00];
     const t0 = audioCtx.currentTime + 0.05;
     const master = audioCtx.createGain();
-    master.gain.value = 0.55;
-    // 简易混响：延迟反馈
+    master.gain.value = 0.6;
     const delay = audioCtx.createDelay(); delay.delayTime.value = 0.22;
     const fb = audioCtx.createGain(); fb.gain.value = 0.28;
     const wet = audioCtx.createGain(); wet.gain.value = 0.35;
     delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(audioCtx.destination);
     master.connect(audioCtx.destination); master.connect(delay);
-
     seq.forEach((f,i) => {
       const start = t0 + i * 0.30;
       const g = audioCtx.createGain();
       g.gain.setValueAtTime(0, start);
-      g.gain.linearRampToValueAtTime(0.22, start + 0.025);
+      g.gain.linearRampToValueAtTime(0.24, start + 0.025);
       g.gain.exponentialRampToValueAtTime(0.001, start + 0.55);
       g.connect(master);
-      // 管风琴音色：3 个失谐 sawtooth + 低通
       [0, 5, -6].forEach(det => {
         const o = audioCtx.createOscillator();
         o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = det;
@@ -57,22 +53,25 @@ function playPhantomOrgan(){
 }
 
 let openingTimer = null;
+let openingStarted = false;
 function playOpening(){
-  // 重置
-  hero.classList.remove('begin','drop','open');
-  if(openingTimer) clearTimeout(openingTimer);
-  void hero.offsetWidth;
-  // 1. 点击开始：管风琴响起 + 吊灯坠落
+  if(openingStarted) return;
+  openingStarted = true;
   hero.classList.add('begin');
   playPhantomOrgan();
   openingTimer = setTimeout(() => hero.classList.add('drop'), 120);
-  // 2. 吊灯落定后幕布收拢拉开
   openingTimer = setTimeout(() => hero.classList.add('open'), 1400);
 }
-beginBtn.addEventListener('click', playOpening);
+/* 点击幕布任意位置、或按任意键触发 */
+beginOverlay.addEventListener('click', playOpening);
+document.addEventListener('keydown', function once(e){
+  if(!openingStarted){ playOpening(); document.removeEventListener('keydown', once); }
+});
 
-document.getElementById('replayBtn').addEventListener('click', () => {
+document.getElementById('replayBtn').addEventListener('click', (e) => {
+  e.stopPropagation();
   hero.classList.remove('begin','drop','open');
+  openingStarted = false;
   if(openingTimer) clearTimeout(openingTimer);
 });
 
